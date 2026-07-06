@@ -1,56 +1,27 @@
 const multer = require("multer");
 
-const storage = multer.diskStorage({
+const { storage } = require("../cloudConfig");
 
-    destination:function(req,file,cb){
+const fileFilter = (req, file, cb) => {
+  const allowed = [
+    "image/jpeg",
+    "image/png",
+    "application/pdf"
+  ];
 
-        cb(null,"uploads/");
-    },
-
-    filename:function(req,file,cb){
-
-        cb(
-            null,
-            Date.now() + "-" + file.originalname
-        );
-    }
-
-});
-
-const fileFilter =
-(req,file,cb)=>{
-
-    const allowed = [
-
-        "image/jpeg",
-        "image/png",
-        "application/pdf"
-
-    ];
-
-    if(allowed.includes(file.mimetype)){
-
-        cb(null,true);
-
-    }else{
-
-        cb(
-            new Error(
-                "Only JPG PNG PDF allowed"
-            ),
-            false
-        );
-    }
-
+  if (allowed.includes(file.mimetype)) {
+    cb(null, true);
+  } else {
+    cb(new Error("Only JPG PNG PDF allowed"), false);
+  }
 };
 
 const upload = multer({
-    storage,
-    fileFilter,
-    limits:{
-        fileSize:
-        5 * 1024 * 1024
-    }
+  storage,
+  fileFilter,
+  limits: {
+    fileSize: 5 * 1024 * 1024
+  }
 });
 
 module.exports = upload;

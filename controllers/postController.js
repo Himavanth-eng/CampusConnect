@@ -10,9 +10,7 @@ async(req,res)=>{
     let fileUrl = "";
     let fileType = "";
     if(req.file){
-        fileUrl =
-        "/uploads/" +
-        req.file.filename;
+        fileUrl = req.file.path;
         fileType =
         req.file.mimetype;
     }

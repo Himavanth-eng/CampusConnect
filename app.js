@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -30,9 +31,7 @@ app.set("layout","layout");
 app.use(express.urlencoded({
     extended:true
 }));
-app.use("/uploads",
-    express.static("uploads")
-);
+
 app.use(methodOverride("_method"));
 
 app.use(session({
