@@ -26,33 +26,40 @@
 </head>
 <body>
 ```
-<div class="bg-dark text-white p-4 rounded shadow mb-4">
-    <h2>
-        Welcome Back,
-        <%= currentUser.username %> 👋
-    </h2>
+<div class="card shadow-lg border-0 mb-4">
+    <div class="card-body p-4">
 
-    <p class="mb-0">
-        Connect, Share and Learn with CampusConnect
-    </p>
+        <h2 class="fw-bold">
+            Welcome Back,
+            <%= currentUser.username %> 👋
+        </h2>
 
+        <p class="text-muted mb-0">
+            Connect • Collaborate • Learn • Grow
+        </p>
+
+    </div>
 </div>
 
-<div class="card shadow-sm mb-4">
+<div class="card shadow-sm border-0 mb-4">
+
     <div class="card-body">
+
         <form action="/posts" method="GET">
+
             <div class="input-group">
+
                 <input
-                    type="text"
-                    name="search"
-                    value="<%= search %>"
-                    class="form-control"
-                    placeholder="Search posts...">
+                type="text"
+                name="search"
+                value="<%= search %>"
+                class="form-control form-control-lg"
+                placeholder="Search students, posts, ideas...">
 
                 <button
-                    class="btn btn-primary">
+                class="btn btn-primary">
 
-                    🔍 Search
+                🔍 Search
 
                 </button>
 
@@ -88,8 +95,7 @@
 
 <% posts.forEach(post=>{ %>
 
-    <div class="card shadow border-0 mb-4">
-
+    <div class="card post-card shadow-lg mb-4">
         <div class="card-body">
 
             <div class="d-flex justify-content-between">
@@ -120,27 +126,13 @@
 
             <hr>
 
-            <h4>
-
-                <%= post.title %>
-
-            </h4>
-
-            <p>
-
-                <%= post.content %>
-
-            </p>
-
+            <h3 class="fw-bold mb-3"><%= post.title %></h3>
+            <p class="fs-5 text-secondary"> <%= post.content %></p>
             <% if(post.fileUrl){ %>
 
                 <% if(post.fileType.startsWith("image")){ %>
 
-                    <img
-                        src="<%= post.fileUrl %>"
-                        class="img-fluid rounded mb-3"
-                        style="max-height:400px;">
-
+                    <img src="<%= post.fileUrl %>" class="post-image shadow mb-3">
                 <% }else{ %>
 
                     <a
@@ -188,14 +180,8 @@
             <% } %>
 
             <div class="mb-3">
-
-                <strong>
-
-                    ❤️
-                    <%= post.likes ? post.likes.length : 0 %>
-
-                </strong>
-
+            ❤️
+                <strong><%= post.likes ? post.likes.length : 0 %> </strong>  Likes
             </div>
 
             <div class="d-flex flex-wrap gap-2 mt-2">
@@ -213,7 +199,7 @@
 
             <hr>
 
-            <h5>
+            <h5 class="fw-bold">
                 💬 Comments
             </h5>
 

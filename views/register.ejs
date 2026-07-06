@@ -1,67 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
-    <h1>Register</h1>
-    <div class="container">
+<div class="row justify-content-center align-items-center">
 
-<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-5">
 
-<div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-lg p-4 mt-5">
 
-<div class="card shadow mt-5">
+            <div class="text-center mb-4">
 
-<div class="card-body">
+                <img
+                src="/images/clogo.png"
+                width="90"
+                height="90"
+                class="mb-3">
 
-<h2 class="text-center mb-4">
-Login
-</h2>
+                <h1 class="fw-bold">
+                    CampusConnect
+                </h1>
 
-<form action="/register" method="POST">
+                <p class="text-muted">
+                    Connect • Collaborate • Grow
+                </p>
 
-<input
-type="text"
-name="username"
-class="form-control mb-2"
-placeholder="Username">
+                <div class="badge bg-success px-3 py-2">
+                    Join India's Student Network
+                </div>
 
-<input
-type="email"
-name="email"
-class="form-control mb-2"
-placeholder="Email">
+            </div>
 
-<input
-type="password"
-name="password"
-class="form-control mb-2"
-placeholder="Password">
+            <form action="/register" method="POST">
 
-<button
-class="btn btn-success">
+                <div class="mb-3">
 
-Register
+                    <label class="form-label">
+                        Username
+                    </label>
 
-</button>
+                    <input
+                    type="text"
+                    name="username"
+                    class="form-control form-control-lg"
+                    placeholder="Enter username"
+                    required>
 
-</form>
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Email
+                    </label>
+
+                    <input
+                    type="email"
+                    name="email"
+                    class="form-control form-control-lg"
+                    placeholder="Enter email"
+                    required>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+                        Password
+                    </label>
+
+                    <input
+                    type="password"
+                    name="password"
+                    class="form-control form-control-lg"
+                    placeholder="Create password"
+                    required>
+
+                </div>
+
+                <div class="d-grid">
+
+                    <button
+                    class="btn btn-success btn-lg">
+
+                    Create Account 🚀
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <hr>
+
+            <div class="text-center">
+
+                Already have an account?
+
+                <a
+                href="/login"
+                class="fw-bold text-decoration-none">
+
+                Login Here
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<p class="mt-3"> Already have an account?
-<a href="/login">Login Here</a>
-</p>
-</body>
-</html>
