@@ -74,7 +74,9 @@ require("./routes/chatRoutes");
 app.use("/",chatRoutes);
 const Notification = require("./models/Notification");
 const Message = require("./models/Message");
-
+app.get("/", (req, res) => {
+    res.redirect("/login");
+});
 const users = {};
 
 io.on("connection", (socket) => {
