@@ -1,0 +1,81 @@
+<div class="card shadow border-0">
+
+<div class="card-body p-4">
+
+<h2 class="mb-4">
+
+👤 Edit Profile
+
+</h2>
+
+<form
+action="/profile?_method=PUT"
+method="POST">
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Username
+
+</label>
+
+<input
+type="text"
+name="username"
+value="<%= user.username %>"
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Branch
+
+</label>
+
+<input
+type="text"
+name="branch"
+value="<%= user.branch %>"
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Bio
+
+</label>
+
+<textarea
+name="bio"
+rows="5"
+class="form-control"><%= user.bio %></textarea>
+
+</div>
+
+<button
+class="btn btn-success">
+
+💾 Save Changes
+
+</button>
+
+<a
+href="/profile"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+</div>
+
+</div>

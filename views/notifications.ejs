@@ -1,0 +1,48 @@
+<h1>
+
+Notifications
+
+</h1>
+
+<% if(notifications.length===0){ %>
+
+<div class="alert alert-info">
+
+No Notifications
+
+</div>
+
+<% } %>
+
+<% notifications.forEach(n=>{ %>
+
+<div class="card mb-2">
+
+<div class="card-body">
+
+<b>
+
+<%= n.sender.username %>
+
+</b>
+
+<%= n.message %>
+
+<br>
+
+<small>
+
+<%= n.createdAt.toLocaleString() %>
+
+</small>
+<a href="/chat/<%= n.sender._id %>">
+
+<%= n.sender.username %>
+sent you a message
+
+</a>
+</div>
+
+</div>
+
+<% }) %>

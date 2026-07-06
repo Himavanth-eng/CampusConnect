@@ -1,0 +1,41 @@
+<h1>My Posts</h1>
+
+<% if(posts.length===0){ %>
+
+    <div class="alert alert-info">
+
+        No Posts Yet
+
+    </div>
+
+<% } %>
+
+<% posts.forEach(post=>{ %>
+
+<div class="card mb-3">
+
+<div class="card-body">
+
+<h3>
+
+<%= post.title %>
+
+</h3>
+
+<p>
+
+<%= post.content %>
+
+</p>
+
+<p>
+
+❤️ <%= post.likes.length %>
+
+</p>
+
+</div>
+
+</div>
+
+<% }) %>

@@ -1,0 +1,197 @@
+<h1 class="mb-4">
+⚙ Admin Dashboard
+</h1>
+
+<div class="row mb-4">
+
+```
+<div class="col-md-4">
+
+    <div class="card text-center shadow">
+
+        <div class="card-body">
+
+            <h1>👤</h1>
+
+            <h3>
+                <%= usersCount %>
+            </h3>
+
+            <p>Users</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-4">
+
+    <div class="card text-center shadow">
+
+        <div class="card-body">
+
+            <h1>📝</h1>
+
+            <h3>
+                <%= postsCount %>
+            </h3>
+
+            <p>Posts</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-4">
+
+    <div class="card text-center shadow">
+
+        <div class="card-body">
+
+            <h1>💬</h1>
+
+            <h3>
+                <%= commentsCount %>
+            </h3>
+
+            <p>Comments</p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<h2 class="mt-5">
+Users
+</h2>
+
+<% users.forEach(user=>{ %>
+
+<div class="card shadow-sm mb-3">
+
+```
+<div class="card-body">
+
+    <h5>
+        <%= user.username %>
+    </h5>
+
+    <p class="text-muted">
+        <%= user.email %>
+    </p>
+
+    <form
+    action="/admin/users/<%= user._id %>/delete"
+    method="POST">
+
+        <button
+        class="btn btn-danger btn-sm">
+
+        Delete User
+
+        </button>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<% }) %>
+
+<h2 class="mt-5">
+Posts
+</h2>
+
+<% posts.forEach(post=>{ %>
+
+<div class="card shadow-sm mb-3">
+
+```
+<div class="card-body">
+
+    <h5>
+        <%= post.title %>
+    </h5>
+
+    <p>
+        Author:
+        <%= post.author ? post.author.username : "Deleted User" %>
+    </p>
+
+    <form
+    action="/admin/posts/<%= post._id %>/delete"
+    method="POST">
+
+        <button
+        class="btn btn-danger btn-sm">
+
+        Delete Post
+
+        </button>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<% }) %>
+
+<h2 class="mt-5">
+Comments
+</h2>
+
+<% comments.forEach(comment=>{ %>
+
+<div class="card shadow-sm mb-3">
+
+```
+<div class="card-body">
+
+    <p>
+        <strong>Comment:</strong>
+        <%= comment.text %>
+    </p>
+
+    <p>
+        <strong>Author:</strong>
+        <%= comment.author ? comment.author.username : "Deleted User" %>
+    </p>
+
+    <form
+    action="/admin/comments/<%= comment._id %>/delete"
+    method="POST">
+
+        <button
+        class="btn btn-danger btn-sm">
+
+        Delete Comment
+
+        </button>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<% }) %>
+
+<a
+href="/posts"
+class="btn btn-primary mt-3">
+
+← Back To Posts
+
+</a>

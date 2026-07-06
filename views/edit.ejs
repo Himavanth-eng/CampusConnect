@@ -1,0 +1,65 @@
+<div class="card shadow border-0">
+
+<div class="card-body p-4">
+
+<h2 class="mb-4">
+
+✏ Edit Post
+
+</h2>
+
+<form
+action="/posts/<%= post._id %>?_method=PUT"
+method="POST">
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Title
+
+</label>
+
+<input
+type="text"
+name="title"
+value="<%= post.title %>"
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Content
+
+</label>
+
+<textarea
+name="content"
+rows="6"
+class="form-control"><%= post.content %></textarea>
+
+</div>
+
+<button
+class="btn btn-warning">
+
+Update Post
+
+</button>
+
+<a
+href="/posts"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+</div>
+
+</div>

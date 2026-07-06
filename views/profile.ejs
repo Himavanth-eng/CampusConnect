@@ -1,0 +1,67 @@
+<div class="card shadow border-0">
+
+    <div class="card-body text-center p-5">
+
+        <div
+        class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3"
+        style="
+        width:100px;
+        height:100px;
+        font-size:40px;
+        ">
+        <%= user.username.charAt(0).toUpperCase() %>
+        </div>
+        <h2>
+            <%= user.username %>
+        </h2>
+
+        <p class="text-muted">
+            <%= user.email %>
+        </p>
+
+        <hr>
+        <p>
+            🎓 <strong>Branch:</strong>
+            <%= user.branch || "Not Added" %>
+        </p>
+        <p>
+            📝 <strong>Bio:</strong>
+            <%= user.bio || "No Bio Yet" %>
+        </p>
+        <div class="row mt-4">
+            <div class="col-12 col-md-6 mb-3">
+                <div class="card bg-light">
+
+                    <div class="card-body">
+
+                        <h3>
+                            <%= followersCount %>
+                        </h3>
+
+                        <p class="mb-0">
+                            Followers
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h3>
+                            <%= followingCount %>
+                        </h3>
+
+                        <p class="mb-0">
+                            Following
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a
+        href="/profile/edit"
+        class="btn btn-primary mt-4">
+        ✏ Edit Profile
+        </a>
+    </div>
+</div>

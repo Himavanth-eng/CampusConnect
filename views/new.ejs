@@ -1,0 +1,81 @@
+<div class="card shadow border-0">
+
+<div class="card-body p-4">
+
+<h2 class="mb-4">
+📝 Create New Post
+</h2>
+
+<form
+action="/posts"
+method="POST"
+enctype="multipart/form-data">
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Post Title
+
+</label>
+
+<input
+type="text"
+name="title"
+class="form-control"
+placeholder="Enter post title">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Content
+
+</label>
+
+<textarea
+name="content"
+rows="6"
+class="form-control"
+placeholder="What's on your mind?">
+</textarea>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+📁 Upload Image / PDF
+
+</label>
+
+<input
+type="file"
+name="postFile"
+class="form-control">
+
+</div>
+
+<button
+class="btn btn-success">
+
+🚀 Create Post
+
+</button>
+
+<a
+href="/posts"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+</form>
+
+</div>
+
+</div>
