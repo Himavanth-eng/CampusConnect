@@ -26,11 +26,25 @@
 <style>
 
     body{
-        background:#f4f6f9;
-    }
+    background:
+    linear-gradient(
+        135deg,
+        #e0f2fe 0%,
+        #dbeafe 25%,
+        #f5f3ff 50%,
+        #ecfeff 75%,
+        #ffffff 100%
+    );
+
+    background-attachment: fixed;
+    min-height:100vh;
+}
 
     .navbar{
-        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    background:rgba(15,23,42,0.85);
+    backdrop-filter:blur(20px);
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.15);
     }
 
     .navbar-brand{
@@ -58,13 +72,16 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-
+<nav class="navbar navbar-expand-lg sticky-top"></nav>
 <div class="container">
 
-<a class="navbar-brand" href="/posts">
-<i class="fa-solid fa-graduation-cap"></i>
-CampusConnect
+<a class="navbar-brand d-flex align-items-center" href="/posts">
+    <img src="/images/clogo.png"
+         alt="CampusConnect"
+         width="50"
+         height="50"
+         class="me-2">
+    <span>CampusConnect</span>
 </a>
 
 <button

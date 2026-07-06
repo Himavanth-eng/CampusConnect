@@ -31,7 +31,7 @@ app.set("layout","layout");
 app.use(express.urlencoded({
     extended:true
 }));
-
+app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
 app.use(session({
